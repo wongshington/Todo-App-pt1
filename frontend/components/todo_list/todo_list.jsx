@@ -1,18 +1,28 @@
 import React from 'react';
-// import TodoListItem from './todo_list/todo_list_item';
+import TodoListItem from './todo_list_item';
 
-const TodoList = ({ todos }) => {
-  return (
+class TodoList extends React.Component {
+
+  constructor({todos}){
+    super({todos});
+  }
+
+
+  render() {
+    return (
     <div id="list">
       <ul>
         {
-          todos.map(todo => (<li>{ todo.title }</li>))
+          this.props.todos.map(
+            (todo, idx) => (<TodoListItem key={idx} todo={todo}/>)
+          )
         }
       </ul>
     </div>
   );
+}
 
-};
+}
 
 
 
