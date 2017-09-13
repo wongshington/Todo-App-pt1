@@ -1,10 +1,13 @@
 import React from 'react';
 import TodoListItem from './todo_list_item';
+import TodoForm from './todo_form';
+import { receiveTodo } from '../../actions/todo_actions';
+// import uniqueId from '../../utils/unique_id';
 
 class TodoList extends React.Component {
 
-  constructor({todos}){
-    super({todos});
+  constructor(props){
+    super(props);
   }
 
 
@@ -18,10 +21,10 @@ class TodoList extends React.Component {
           )
         }
       </ul>
+      <TodoForm type={receiveTodo}/>
     </div>
-  );
-}
-
+    );
+  }
 }
 
 
